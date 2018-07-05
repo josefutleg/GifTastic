@@ -1,0 +1,38 @@
+input {
+    width: 20%;
+    height: 40px;
+    border: solid palegreen 1px;
+}
+.inputContainer {
+    text-align: center;
+    display: block;
+    margin-top: 10%;
+}
+.topicsContainer {
+    margin: 2%;
+}
+#newButton {
+    margin: 5px;
+}
+h2 {
+    font-family: 'Knewave', cursive;
+    color: pink;
+
+}
+.btn-outline-primary {
+    border-color: pink;
+    color: dimgray;
+}
+.btn-outline-primary:hover {
+    background-color: pink;
+    border-color:  peachpuff;
+}
+img {
+    height: 200px;
+    width: 200px;
+    margin: 2%;
+}
+.gifContainer {
+    display: block;
+    text-align: center;
+}
