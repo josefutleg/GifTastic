@@ -27,16 +27,18 @@ $('button').on('click', function(){
 $('.topicsContainer').on('click', 'button', function(){
     $('.gifContainer').empty();
 topicButton = $(this).text();
-var queryURL = "http://api.giphy.com/v1/gifs/random?api_key=uREZoMju3bSu2Sho19kTyRgJr6Tvhfhg&limit=5&tag=" + topicButton;
+var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=uREZoMju3bSu2Sho19kTyRgJr6Tvhfhg&limit=5&tag=" + topicButton;
 console.log(queryURL);
 for (i=0; i<20; i++){
     $.ajax({url: queryURL})
     .then(function(response){
         console.log(response);
-
-    var makeImg = $('<img>').attr('src', response.data.fixed_height_small_still_url).attr('data-still',response.data.fixed_height_small_still_url).attr('data-animate',response.data.image_url).attr('data-state', 'still').addClass('gif');
-    
-    $('.gifContainer').append(makeImg);
+    var imgDiv = $('<div>').addClass('image')
+    var makeImg = $('<img>').attr('src', response.data.fixed_height_small_still_url).attr('data-still',response.data.fixed_height_small_still_url).attr('data-animate',response.data.fixed_height_small_url).attr('data-state', 'still').addClass('gif');
+    var dataTag = $('<span>').text(response.data.title);
+    imgDiv.append(dataTag);
+    imgDiv.append(makeImg);
+    $('.gifContainer').append(imgDiv);
     // $('.gifContainer').text(JSON.stringify(response));
 
     });
