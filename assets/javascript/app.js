@@ -1,4 +1,4 @@
-var topics = ['puppies', 'kitties', 'cubs'];
+var topics = ['puppies', 'kitties', 'funny', 'scary', 'dinosaurs'];
 var button;
 var rating = [];
 //giphy api key uREZoMju3bSu2Sho19kTyRgJr6Tvhfhg
@@ -29,9 +29,16 @@ $('.topicsContainer').on('click', 'button', function(){
     // $('.gifContainer').empty();
 topicButton = $(this).text();
 var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=uREZoMju3bSu2Sho19kTyRgJr6Tvhfhg&limit=5&tag=" + topicButton + "&rating=" + rating;
-console.log(queryURL);
+// console.log(queryURL);
+    if (rating == ''){
+        alert('choose a rating');
+        return;
+    }
 for (i=0; i<20; i++){
-        $.ajax({url: queryURL})
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
         .then(function(response){
         var imgDiv = $('<div>').addClass('image')
         var makeImg = $('<img>').attr('src', response.data.fixed_height_small_still_url).attr('data-still',response.data.fixed_height_small_still_url).attr('data-animate',response.data.fixed_height_small_url).attr('data-state', 'still').addClass('gif');
@@ -41,8 +48,8 @@ for (i=0; i<20; i++){
         
         if (rating == 'PG-13'){
                 dataRating.text(13);
-            } 
-        
+            }
+
         imgDiv.append(dataRating);
         imgDiv.append(downloadTag);
         imgDiv.append(dataTag);
