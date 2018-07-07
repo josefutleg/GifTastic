@@ -30,6 +30,7 @@ $('select').on('change', function(){
 
 function getGifs(){
     queryURL;
+
     $.ajax({
         url: queryURL,
         method: "GET",
@@ -41,7 +42,8 @@ function getGifs(){
     var dataTag = $('<span>').text(response.data.title).attr('id','title');
     var dataRating = $('<span>').text(rating).attr('id','rating');
     var downloadTag = $(`<a href=${response.data.image_url} download>`).addClass('fas fa-arrow-alt-circle-down');
-    
+    console.log(response);
+    console.log(queryURL);
     if (rating == 'PG-13'){
             dataRating.text(13);
         }
@@ -57,8 +59,9 @@ function getGifs(){
 $('.topicsContainer').on('click', 'button', function(){
     // $('.gifContainer').empty();
 topicButton = $(this).text();
-// var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=uREZoMju3bSu2Sho19kTyRgJr6Tvhfhg&limit=5&tag=" + topicButton + "&rating=" + rating;
-// console.log(queryURL);
+queryURL = "https://api.giphy.com/v1/gifs/random?api_key=uREZoMju3bSu2Sho19kTyRgJr6Tvhfhg&limit=5&tag=" + topicButton + "&rating=" + rating;
+console.log(queryURL);
+
     if (rating == ''){
         alert('choose a rating');
         return;
