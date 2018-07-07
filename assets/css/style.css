@@ -1,6 +1,6 @@
 input {
     width: 20%;
-    height: 40px;
+    height: 25px;
     border: solid palegreen 1px;
 }
 .inputContainer {
@@ -17,7 +17,6 @@ input {
 h2 {
     font-family: 'Knewave', cursive;
     color: pink;
-
 }
 .btn-outline-primary {
     border-color: pink;
@@ -28,7 +27,11 @@ h2 {
     border-color:  peachpuff;
 }
 img {
-    height: 250px;
+    height: 300px;
+    width: 400px;
+}
+img:hover {
+    cursor: pointer;
 }
 .gifContainer {
     display: block;
@@ -38,11 +41,42 @@ img {
 .image {
     float: left;
     margin: .5%;
-    position: relative;
-    /* text-align: center; */    
+    position: relative;    
 }
 span {
     position: absolute;
     background-color: gray;
     color: whitesmoke;
+}
+.fa-arrow-alt-circle-down {
+    position: absolute;
+    size: 7ex;
+    bottom: 8px;
+    left: 8px;
+    color: pink;
+}
+a:hover{
+    text-decoration: none;
+    color: palegreen;
+}
+.form-control, #exampleFormControlSelect1 {
+    width: 72px;
+    height: 25px;
+    display: inline-block;
+    border-color: lightblue;
+}
+#rating {
+    position: absolute;
+    size: 7ex;
+    bottom: 8px;
+    right: 8px;
+    color: lightblue;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    padding: 3px;
+}
+#submit {
+    height: 25px;
+    padding: 0px 10px;
 }
