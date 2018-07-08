@@ -56,14 +56,13 @@ $('input').keypress('change', function(e){
 
 function getGifs(){
     queryURL;
-
     $.ajax({
         url: queryURL,
         method: "GET",
         cache: false
     })
     .then(function(response){
-    var imgDiv = $('<div>').addClass('image')
+    var imgDiv = $('<div>').addClass('image');
     var makeImg = $('<img>').attr('src', response.data.fixed_height_small_still_url).attr('data-still',response.data.fixed_height_small_still_url).attr('data-animate',response.data.image_url).attr('data-state', 'still').addClass('gif');
     var dataTag = $('<span>').text(response.data.title).attr('id','title');
     var dataRating = $('<span>').text(rating).attr('id','rating');
@@ -89,7 +88,7 @@ $('.topicsContainer').on('click', 'button', function(){
 topicButton = $(this).text();
 var input = $('input').val();
 queryURL = "https://api.giphy.com/v1/gifs/random?api_key=uREZoMju3bSu2Sho19kTyRgJr6Tvhfhg&limit=25&tag=" + topicButton + "&rating=" + rating;
-console.log(queryURL);
+
 // if statement that will prevent the function to run if a rating isn't chosen
     if (rating == ''){
         alert('choose a rating');

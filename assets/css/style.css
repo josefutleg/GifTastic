@@ -34,7 +34,7 @@ img:hover {
     cursor: pointer;
 }
 .gifContainer {
-    margin: 2% 10%;
+    margin: 2% 5%;
 }
 .image {
     float: left;
@@ -79,22 +79,16 @@ a:hover{
     height: 25px;
     padding: 0px 10px;
 }
-/* @media only screen and (max-width: 1440px) {
-    /* img {
-        height: 200px;
-        width: 300px;
-    } */
-    /* .gifContainer {
-        margin: 2% 6%;
+@media only screen and (max-width: 1366px) {
+
+    .gifContainer {
+        margin: 2% 4%;
     }
 }
-@media only screen and (max-width: 1399px) { */
-    /* img {
-        height: 200px;
-        width: 300px;
-    } */
-    /* .gifContainer {
-        margin: 2% 5%;
+@media only screen and (max-width: 1280px) {
+
+    .gifContainer {
+        margin: 2% 1.5%;
     }
 }
 @media only screen and (max-width: 1024px) {
@@ -111,8 +105,26 @@ a:hover{
     .gifContainer {
         margin: 2% 10%;
     }
-} */
-/* @media only screen and (max-width: 414px) {
+}
+@media only screen and (max-width: 736px) {
+    img {
+        height: 200px;
+        width: 300px;
+    }
+    .gifContainer {
+        margin: 2% 8%;
+    }
+}
+@media only screen and (max-width: 667px) {
+    img {
+        height: 200px;
+        width: 300px;
+    }
+    .gifContainer {
+        margin: 2% 4%;
+    }
+}
+@media only screen and (max-width: 414px) {
     img {
         height: 300px;
         width: 400px;
@@ -120,8 +132,8 @@ a:hover{
     .gifContainer {
         margin: 2% 1.5%;
     }
-} */
-/* @media only screen and (max-width: 375px) {
+}
+@media only screen and (max-width: 375px) { 
     img {
         height: 250px;
         width: 350px;
@@ -129,4 +141,4 @@ a:hover{
     .gifContainer {
         margin: 2% 3%;
     }
-} */
+}
